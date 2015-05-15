@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <!--This is yaw pitch roll (must be changed after the tf_echo)-->
+  
+  <node pkg="tf" type="static_transform_publisher" name="static_tf_publisher_1" args="0.000, 0.022, 0.000, 0.000, 0.000, 0.000 camera_link camera_rgb_frame 30"/>
+
+<node pkg="tf" type="static_transform_publisher" name="static_tf_publisher_2" args="0.000, 0.049, 0.000, 0.000, 0.000, 0.000 camera_link camera_depth_frame 30"/>
+
+<node pkg="tf" type="static_transform_publisher" name="static_tf_publisher_3" args="0.000, 0.0, 0.000, -1.571, -0.000, -1.571 camera_rgb_frame camera_rgb_optical_frame 30"/>
+
+<node pkg="tf" type="static_transform_publisher" name="static_tf_publisher_4" args="0.000, 0.0, 0.000, -1.571, -0.000, -1.571 camera_depth_frame camera_depth_optical_frame 30"/>
+
+</launch>

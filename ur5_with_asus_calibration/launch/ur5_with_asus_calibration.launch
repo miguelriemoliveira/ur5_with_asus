@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot_ip" default="192.168.1.102"/>
+
+
+  <!--Launch the ur5 driver with the real robot-->
+  <include file="$(find ur_bringup)/launch/ur5_bringup.launch">
+  <arg name="robot_ip" value="$(arg robot_ip)"/>
+  <arg name="limited" value="true"/>
+  </include>
+
+  <!--Launch camera drivers (without publishing tfs)-->
+  <include file="$(find ur5_with_asus_calibration)/launch/openni.launch">
+  </include>
+
+  <!--Launch camera tf publisher-->
+  <include file="$(find ur5_with_asus_calibration)/launch/publish_asus_tfs.launch">
+  </include>
+
+
+  <!--Launch calibration node-->
+  <node pkg="ur5_with_asus_calibration" type="ur5_with_asus_calibration" name="ur5_with_asus_calibration" output="screen">
+    <rosparam command="load" file="$(find ur5_with_asus_calibration)/calibration/three_points.yaml"/>
+  </node>
+</launch>
