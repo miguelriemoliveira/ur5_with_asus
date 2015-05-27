@@ -1,0 +1,19 @@
+#Transform from robot to shelf 
+#Take the UR5 gripper manually to the three points in the calibration, 
+#collect their coordinates by executing 
+#
+#rosrun tf tf_echo /world /ee_link
+#
+#Then copying the translation values here
+#
+#Calibration points, x y z coordinates defined in the UR5 reference frame
+
+#Date 31 March 2015
+#calibration_origin: [0.633, 0.521, 0.305]
+#calibration_xaxis: [0.633, 0.411, 0.305]
+#calibration_yaxis: [0.633, 0.521, 0.224]
+
+calibration_origin: [0.735, 0.023, 0.239]
+calibration_xaxis: [0.712, -0.133, 0.241]
+calibration_yaxis: [0.735, 0.023, 0.157]
+

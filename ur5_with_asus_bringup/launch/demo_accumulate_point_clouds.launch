@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- robot_ip: IP-address of the robot's socket-messaging server -->
+  <!--<arg name="robot_ip" default="192.168.1.102"/>-->
+
+  <!-- ur common -->
+  <include file="$(find ur5_with_asus_bringup)/launch/ur5_with_asus_bringup.launch">
+    <arg name="data_skip" value="5" />
+    <arg name="ir_mode" value="8" />
+    <arg name="color_mode" value="8" />
+    <arg name="depth_mode" value="8" />
+  </include>
+
+
+  <node name="rviz" pkg="rviz" type="rviz" args="--display-config $(find ur5_with_asus_bringup)/cfg/demo_accumulate_point_clouds.rviz" required="true"/>
+</launch>

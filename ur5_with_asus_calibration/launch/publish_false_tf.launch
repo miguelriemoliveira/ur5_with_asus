@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <!--Publishes a "fake" robot to camera transform, jsut to make sure we can access tfs-->
+  <arg name="robot_camera_mount_link_frame_id" default="/ee_link"/>
+  <!--<arg name="camera_frame_id" default="/kinect_rgb_optical_frame"/>-->
+  <arg name="camera_frame_id" default="/camera_link"/>
+  <!--rosrun tf tf_echo /ee_link /kinect_link-->
+  <!--Copy the Origin and RPY here. Note: yaw pitch roll (must be changed after the tf_echo)-->
+  <!--Fri May 15 15:54:51 WEST 2015-->
+  <!--- Translation: [-0.038, -0.089, 0.068]-->
+  <!--- Rotation: in Quaternion [0.380, -0.008, 0.027, 0.925]-->
+  <!--in RPY [0.778, -0.035, 0.045]-->
+  <arg name="static_transform" value="-0.0376392422473, -0.0893148572862, 0.0678378626701, 0.0446712637898, -0.0349196137731, 0.77814092516"/>
+  <node pkg="tf" type="static_transform_publisher" name="static_tf_publisher" args="$(arg static_transform) $(arg robot_camera_mount_link_frame_id) $(arg camera_frame_id) 30"/>
+</launch>
