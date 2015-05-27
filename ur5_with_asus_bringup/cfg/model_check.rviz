@@ -7,6 +7,7 @@ Panels:
         - /Global Options1
         - /Status1
         - /TF1/Frames1
+        - /CompareOctreesMarkerArray1/Namespaces1
       Splitter Ratio: 0.427015
     Tree Height: 452
   - Class: rviz/Selection
@@ -117,7 +118,7 @@ Visualization Manager:
       Class: rviz/PointCloud2
       Color: 255; 255; 255
       Color Transformer: RGB8
-      Decay Time: 5
+      Decay Time: 0
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
@@ -236,12 +237,29 @@ Visualization Manager:
       Queue Size: 100
       Value: false
     - Class: rviz/Axes
-      Enabled: false
+      Enabled: true
       Length: 0.2
       Name: WorldAxes
       Radius: 0.02
       Reference Frame: <Fixed Frame>
-      Value: false
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /inconsistencies_arrays
+      Name: CompareOctreesMarkerArray
+      Namespaces:
+        target_occupied: true
+        target_volume: true
+      Queue Size: 100
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /center_of_mass
+      Name: MarkerArrayCenterOfMass
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 91; 91; 91
@@ -266,22 +284,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.88161
+      Distance: 2.61368
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.637639
-        Y: 0.293711
-        Z: 1.68186
+        X: 0.845235
+        Y: -0.035572
+        Z: 1.25981
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.4198
+      Pitch: 0.8798
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.17867
+      Yaw: 2.57867
     Saved:
       - Class: rviz/Orbit
         Distance: 0.98113

@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!--This will create a demo that will show the point clouds of the asus being accumulated while the robot is manualy moved around-->
 
 <launch>
   <!-- robot_ip: IP-address of the robot's socket-messaging server -->

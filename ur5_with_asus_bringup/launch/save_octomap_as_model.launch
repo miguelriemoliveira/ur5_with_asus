@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!--This will save the current octomap being published in topic /octomap_full to
+a octomap file called model.ot in world_model_consistency_check/octomaps -->
+
+<launch>
+  <node name="octomap_save" pkg="world_model_consistency_check" type="octomap_msg2file">
+    <param name="input" value="/octomap_full"/>
+    <param name="output" value="$(find world_model_consistency_check)/octomaps/model.ot"/>
+  </node>
+</launch>
