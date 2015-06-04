@@ -50,62 +50,19 @@ Visualization Manager:
       Reference Frame: <Fixed Frame>
       Value: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base_link:
-          Value: true
-        camera_depth_frame:
-          Value: true
-        camera_depth_optical_frame:
-          Value: true
-        camera_link:
-          Value: true
-        camera_rgb_frame:
-          Value: true
-        camera_rgb_optical_frame:
-          Value: true
-        ee_link:
-          Value: true
-        forearm_link:
-          Value: true
-        shoulder_link:
-          Value: true
-        upper_arm_link:
-          Value: true
-        world:
-          Value: true
-        wrist_1_link:
-          Value: true
-        wrist_2_link:
-          Value: true
-        wrist_3_link:
-          Value: true
       Marker Scale: 0.5
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        world:
-          base_link:
-            shoulder_link:
-              upper_arm_link:
-                forearm_link:
-                  wrist_1_link:
-                    wrist_2_link:
-                      wrist_3_link:
-                        ee_link:
-                          camera_link:
-                            camera_depth_frame:
-                              camera_depth_optical_frame:
-                                {}
-                            camera_rgb_frame:
-                              camera_rgb_optical_frame:
-                                {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -266,22 +223,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.88161
+      Distance: 1.96432
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.637639
-        Y: 0.293711
-        Z: 1.68186
+        X: 0.281619
+        Y: 0.034949
+        Z: 0.599431
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.4198
+      Pitch: 0.7548
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.17867
+      Yaw: 2.79
     Saved:
       - Class: rviz/Orbit
         Distance: 0.98113

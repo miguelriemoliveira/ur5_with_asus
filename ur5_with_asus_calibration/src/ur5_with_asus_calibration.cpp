@@ -62,8 +62,9 @@ void compute_tf_from_three_points(tf::Transform* t_out, PointCloudT::Ptr pc)
 
     //Find the nsa vectors. the n vector will be the vector from pt1_projected to pt2_projected 
     double n[3] = {ptX.x - ptO.x, ptX.y - ptO.y, ptX.z - ptO.z};
-    double s[3] = {ptY.x - ptO.x, ptY.y - ptO.y, ptY.z - ptO.z};
-    double a[3]={n[1]*s[2] - n[2]*s[1],	n[2]*s[0] - n[0]*s[2], n[0]*s[1] - n[1]*s[0]};
+    double tmp[3] = {ptY.x - ptO.x, ptY.y - ptO.y, ptY.z - ptO.z};
+    double a[3]={n[1]*tmp[2] - n[2]*tmp[1],	n[2]*tmp[0] - n[0]*tmp[2], n[0]*tmp[1] - n[1]*tmp[0]};
+    double s[3]={a[1]*n[2] - a[2]*n[1],	a[2]*n[0] - a[0]*n[2], a[0]*n[1] - a[1]*n[0]};
 
     //Normalize all vectors
     normalize_vector(n); normalize_vector(s); normalize_vector(a);

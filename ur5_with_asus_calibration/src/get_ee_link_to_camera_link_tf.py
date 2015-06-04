@@ -21,12 +21,16 @@ if __name__ == '__main__':
         try:
             (trans,rot) = listener.lookupTransform('/ee_link', '/camera_link', rospy.Time(0))
             flg = True
+
             rospy.loginfo("Origin %s", trans)
             angles = euler_from_quaternion(rot)
             rospy.loginfo("RPY %s", angles)
 
 
-            rospy.loginfo("Copy this to the publish_fake_tf.launch (inverted roll / yaw)")
+            rospy.loginfo("\nCopy this to ur5_with_asus_joint_limited_robot_urdf.xacro")
+            print "<origin xyz=\"" + str(trans[0]) + " " + str(trans[1]) + " " + str(trans[2]) + "\" rpy=\"" + str(angles[0]) + " " + str(angles[1]) + " " + str(angles[2]) + "\"/>"
+
+            rospy.loginfo("\nCopy this to the publish_false_tf.launch (already inverted roll / yaw)")
             print str(trans[0]) + ", " + str(trans[1]) + ", " + str(trans[2]) + ", "  + str(angles[2]) + ", " + str(angles[1]) + ", " + str(angles[0])
 
             #rospy.loginfo("Copy this to the xacro file")
