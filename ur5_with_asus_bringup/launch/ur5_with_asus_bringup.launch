@@ -13,21 +13,15 @@
   <arg name="limited" default="true"/>
   <arg name="min_payload" default="0.0"/>
   <arg name="max_payload" default="10.0"/>
-  <arg name="data_skip" default="1" />
-  <arg name="ir_mode" default="5" />
-  <arg name="color_mode" default="5" />
-  <arg name="depth_mode" default="5" />
-
-
-
+  <arg name="data_skip" default="1"/>
+  <arg name="ir_mode" default="5"/>
+  <arg name="color_mode" default="5"/>
+  <arg name="depth_mode" default="5"/>
   <!-- robot model -->
   <!--<include file="$(find ur_description)/launch/ur5_upload.launch">-->
-    <!--<arg name="limited" value="$(arg limited)"/>-->
+  <!--<arg name="limited" value="$(arg limited)"/>-->
   <!--</include>-->
-
-    <param if="$(arg limited)" name="robot_description" command="$(find xacro)/xacro.py '$(find ur5_with_asus_description)/urdf/ur5_with_asus_joint_limited_robot.urdf.xacro'"/>  
-
-
+  <param if="$(arg limited)" name="robot_description" command="$(find xacro)/xacro.py '$(find ur5_with_asus_description)/urdf/ur5_with_asus_joint_limited_robot.urdf.xacro'"/>
   <!-- ur common -->
   <include file="$(find ur_bringup)/launch/ur_common.launch">
     <arg name="robot_ip" value="$(arg robot_ip)"/>
@@ -35,16 +29,12 @@
     <arg name="min_payload" value="$(arg min_payload)"/>
     <arg name="max_payload" value="$(arg max_payload)"/>
   </include>
-
   <!--camera drivers-->
- <include file="$(find ur5_with_asus_calibration)/launch/openni.launch">
-    <arg name="data_skip" value="$(arg data_skip)" />
-    <arg name="ir_mode" value="$(arg ir_mode)" />
-    <arg name="color_mode" value="$(arg color_mode)" />
-    <arg name="depth_mode" value="$(arg depth_mode)" />
- </include>
-
- <!--<param name="/camera/driver/data_skip" command="$(find xacro)/xacro.py '$(find ur5_with_asus_description)/urdf/ur5_with_asus_joint_limited_robot.urdf.xacro'"/>  -->
-
-
+  <include file="$(find ur5_with_asus_calibration)/launch/openni.launch">
+    <arg name="data_skip" value="$(arg data_skip)"/>
+    <arg name="ir_mode" value="$(arg ir_mode)"/>
+    <arg name="color_mode" value="$(arg color_mode)"/>
+    <arg name="depth_mode" value="$(arg depth_mode)"/>
+  </include>
+  <!--<param name="/camera/driver/data_skip" command="$(find xacro)/xacro.py '$(find ur5_with_asus_description)/urdf/ur5_with_asus_joint_limited_robot.urdf.xacro'"/>  -->
 </launch>

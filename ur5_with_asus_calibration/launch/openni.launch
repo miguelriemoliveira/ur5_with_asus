@@ -1,25 +1,20 @@
 <?xml version="1.0"?>
 <launch>
-<arg name="data_skip" default="1" />
-<arg name="ir_mode" default="5" />
-<arg name="color_mode" default="5" />
-<arg name="depth_mode" default="5" />
-<!--<arg name="depth_registration" value="true"/>-->
-<!--<arg name="camera" value="kinect"/>-->
-
-
-<include file="$(find openni2_launch)/launch/openni2.launch">
-<arg name="load_driver" value="true"/>
-<arg name="depth_registration" value="true"/>
-<arg name="camera" value="camera"/>
-<arg name="publish_tf" value="false"/>
-</include>
-
-<param name="/camera/driver/data_skip" value="$(arg data_skip)"/>
-<param name="/camera/driver/ir_mode" value="$(arg ir_mode)"/>
-<param name="/camera/driver/color_mode" value="$(arg color_mode)"/>
-<param name="/camera/driver/depth_mode" value="$(arg depth_mode)"/>
-
-
-<node pkg="image_view" type="image_view" name="image_view_node" output="screen" args="image:=/camera/rgb/image_raw"/>
+  <arg name="data_skip" default="1"/>
+  <arg name="ir_mode" default="5"/>
+  <arg name="color_mode" default="5"/>
+  <arg name="depth_mode" default="5"/>
+  <!--<arg name="depth_registration" value="true"/>-->
+  <!--<arg name="camera" value="kinect"/>-->
+  <include file="$(find openni2_launch)/launch/openni2.launch">
+    <arg name="load_driver" value="true"/>
+    <arg name="depth_registration" value="true"/>
+    <arg name="camera" value="camera"/>
+    <arg name="publish_tf" value="false"/>
+  </include>
+  <param name="/camera/driver/data_skip" value="$(arg data_skip)"/>
+  <param name="/camera/driver/ir_mode" value="$(arg ir_mode)"/>
+  <param name="/camera/driver/color_mode" value="$(arg color_mode)"/>
+  <param name="/camera/driver/depth_mode" value="$(arg depth_mode)"/>
+  <!--<node pkg="image_view" type="image_view" name="image_view_node" output="screen" args="image:=/camera/rgb/image_raw"/>-->
 </launch>
