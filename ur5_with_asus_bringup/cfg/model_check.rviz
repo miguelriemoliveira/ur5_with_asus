@@ -8,6 +8,7 @@ Panels:
         - /InconsistentCells1/Namespaces1
         - /InconsistenciesAllOctreeCells1/Namespaces1
         - /InconsistenciesDebugAll1/Namespaces1
+        - /ClusterVolumeMarkerArray1
       Splitter Ratio: 0.84153
     Tree Height: 413
   - Class: rviz/Selection
@@ -152,6 +153,7 @@ Visualization Manager:
       Visibility:
         CameraPointCloud2: true
         CameraRawImage: true
+        ClusterVolumeMarkerArray: true
         Grid: true
         InconsistenciesAllOctreeCells: true
         InconsistenciesClustersCenters: true
@@ -176,6 +178,71 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_rgb_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_rgb_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        ee_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        forearm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        shoulder_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        upper_arm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        wrist_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wrist_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wrist_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -183,13 +250,13 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/MarkerArray
-      Enabled: false
+      Enabled: true
       Marker Topic: /clusters
       Name: InconsistentCells
       Namespaces:
-        {}
+        clusters: true
       Queue Size: 100
-      Value: false
+      Value: true
     - Class: rviz/MarkerArray
       Enabled: false
       Marker Topic: /target_volume
@@ -236,11 +303,19 @@ Visualization Manager:
       Use rainbow: true
       Value: false
     - Class: rviz/MarkerArray
-      Enabled: true
+      Enabled: false
       Marker Topic: /inconsistencies
       Name: InconsistenciesDebugAll
       Namespaces:
-        target_inconsistent: true
+        {}
+      Queue Size: 100
+      Value: false
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /volume
+      Name: ClusterVolumeMarkerArray
+      Namespaces:
+        volume: true
       Queue Size: 100
       Value: true
     - Class: rviz/MarkerArray
@@ -283,22 +358,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.64538
+      Distance: 2.04298
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.02213
-        Y: -0.212775
-        Z: 1.06955
+        X: 1.10024
+        Y: -0.0989399
+        Z: 1.07405
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.599802
+      Pitch: 0.664802
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.45184
+      Yaw: 2.55684
     Saved:
       - Class: rviz/Orbit
         Distance: 0.98113
