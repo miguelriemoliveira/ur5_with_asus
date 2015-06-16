@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <launch>
   <!--Publishes a "fake" robot to camera transform, jsut to make sure we can access tfs-->
-  <arg name="robot_camera_mount_link_frame_id" default="/base_laser_navigation_link"/>
+  <arg name="robot_camera_mount_link_frame_id" default="/world"/>
   <!--<arg name="camera_frame_id" default="/kinect_rgb_optical_frame"/>-->
-  <arg name="camera_frame_id" default="/camera_link"/>
+  <arg name="camera_frame_id" default="/map"/>
   <!--rosrun tf tf_echo /ee_link /kinect_link-->
   <!--Copy the Origin and RPY here. Note: yaw pitch roll (must be changed after the tf_echo)-->
   <!--<arg name="static_transform" value="0.089 0.2425 -0.6 1.57 0 1.57"/>-->
-  <arg name="static_transform" value="0.089 0.29 -0.6 1.57 0 1.57"/>
-  <node pkg="tf" type="static_transform_publisher" name="static_tf_publisher_jarvis" args="$(arg static_transform) $(arg robot_camera_mount_link_frame_id) $(arg camera_frame_id) 30"/>
+  <arg name="static_transform" value="0 0 0 0 0 0"/>
+  <node pkg="tf" type="static_transform_publisher" name="static_tf_publisher_map_to_world" args="$(arg static_transform) $(arg robot_camera_mount_link_frame_id) $(arg camera_frame_id) 30"/>
 </launch>

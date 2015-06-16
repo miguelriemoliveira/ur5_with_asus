@@ -2,7 +2,7 @@
 <!--This will launch a file2octomap_msg to load the model.ot as a ros message
 and start up the compare_octrees node-->
 <launch>
-  <node name="rviz" pkg="rviz" type="rviz" args="--display-config $(find ur5_with_asus_bringup)/cfg/model_check.rviz" required="true"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="--display-config $(find ur5_with_asus_bringup)/cfg/model_check_with_regions.rviz" required="true"/>
   <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure">
   </node>
 </launch>
