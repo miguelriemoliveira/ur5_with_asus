@@ -6,8 +6,8 @@ Panels:
       Expanded:
         - /Global Options1
         - /TF1/Frames1
-        - /PointCloud21
         - /InconsistenciesAllMarkerArray1
+        - /InconsistenciesAllMarkerArray1/Status1
       Splitter Ratio: 0.427015
     Tree Height: 615
   - Class: rviz/Selection
@@ -28,79 +28,22 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: ModelPointsPointCloud2
+    SyncSource: ""
 Visualization Manager:
   Class: ""
   Displays:
-    - Alpha: 0.5
-      Cell Size: 1
-      Class: rviz/Grid
-      Color: 160; 160; 164
-      Enabled: true
-      Line Style:
-        Line Width: 0.03
-        Value: Lines
-      Name: Grid
-      Normal Cell Count: 0
-      Offset:
-        X: 0
-        Y: 0
-        Z: 0
-      Plane: XY
-      Plane Cell Count: 20
-      Reference Frame: <Fixed Frame>
-      Value: true
     - Class: rviz/TF
       Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base_footprint:
-          Value: true
-        base_laser_navigation_link:
-          Value: true
-        base_laser_security_link:
-          Value: true
-        camera_depth_frame:
-          Value: true
-        camera_depth_optical_frame:
-          Value: true
-        camera_link:
-          Value: true
-        camera_rgb_frame:
-          Value: true
-        camera_rgb_optical_frame:
-          Value: true
-        direction_wheel:
-          Value: true
-        map:
-          Value: true
-        odom:
-          Value: true
-        world:
-          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        world:
-          map:
-            odom:
-              base_footprint:
-                base_laser_navigation_link:
-                  camera_link:
-                    camera_depth_frame:
-                      camera_depth_optical_frame:
-                        {}
-                    camera_rgb_frame:
-                      camera_rgb_optical_frame:
-                        {}
-                base_laser_security_link:
-                  {}
-                direction_wheel:
-                  {}
+        {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -132,7 +75,7 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
-    - Alpha: 1
+    - Alpha: 0.05
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
         Max Value: 10
@@ -204,7 +147,7 @@ Visualization Manager:
       Marker Topic: /point_cloud_filter/rviz/filter
       Name: SpatialPointcloudFilterMarkerArray
       Namespaces:
-        wireframe: true
+        {}
       Queue Size: 100
       Value: true
     - Alpha: 1
@@ -308,27 +251,27 @@ Visualization Manager:
       Value: false
     - Class: rviz/InteractiveMarkers
       Enable Transparency: true
-      Enabled: true
+      Enabled: false
       Name: LogisticVolumesInteractiveMarkers
       Show Axes: true
       Show Descriptions: true
       Show Visual Aids: false
       Update Topic: /interactive_region_definition/update
-      Value: true
+      Value: false
     - Class: rviz/MarkerArray
-      Enabled: true
+      Enabled: false
       Marker Topic: /target_volume
       Name: RegionDefinitionMarkerArray
       Namespaces:
-        target_volume: true
+        {}
       Queue Size: 100
-      Value: true
+      Value: false
     - Class: rviz/MarkerArray
       Enabled: true
       Marker Topic: /boxes
       Name: LogisticVolumesMarkerArray
       Namespaces:
-        boxes: true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/MarkerArray
@@ -339,10 +282,34 @@ Visualization Manager:
         target_inconsistent: true
       Queue Size: 100
       Value: true
+    - Class: rviz/MarkerArray
+      Enabled: false
+      Marker Topic: /clusters
+      Name: ClustersMarkerArray
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: false
+    - Class: rviz/MarkerArray
+      Enabled: false
+      Marker Topic: /center_of_mass
+      Name: CenterOfMassMarkerArray
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: false
+    - Class: rviz/MarkerArray
+      Enabled: false
+      Marker Topic: /volume
+      Name: VolumeMarkerArray
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: false
   Enabled: true
   Global Options:
-    Background Color: 91; 91; 91
-    Fixed Frame: map
+    Background Color: 255; 255; 255
+    Fixed Frame: world
     Frame Rate: 30
   Name: root
   Tools:
@@ -362,22 +329,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.73647
+      Distance: 10.742
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.729263
-        Y: 2.93486
-        Z: 1.29392
+        X: 0.428355
+        Y: 2.16862
+        Z: 0.639095
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.645202
+      Pitch: 0.450202
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.76817
+      Yaw: 5.53318
     Saved:
       - Class: rviz/Orbit
         Distance: 0.98113
