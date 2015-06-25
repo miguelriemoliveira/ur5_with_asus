@@ -2,12 +2,10 @@
 <!--This will launch a file2octomap_msg to load the model.ot as a ros message
 and start up the compare_octrees node-->
 <launch>
-<!--$(env HOME)/$(arg BAG_NAME)-->
-
+  <!--$(env HOME)/$(arg BAG_NAME)-->
   <arg name="model" default="scene01"/>
   <arg name="target" default="scene02"/>
-
-    <node name="file2octomap_msg" pkg="world_model_consistency_check" type="file2octomap_msg" output="screen">
+  <node name="file2octomap_msg" pkg="world_model_consistency_check" type="file2octomap_msg" output="screen">
     <param name="input" value="$(env HOME)/bagfiles/stamina/$(arg model)/octree.ot"/>
     <param name="output" value="/octomap_model"/>
     <param name="rate" value="10"/>
@@ -17,14 +15,29 @@ and start up the compare_octrees node-->
     <param name="output" value="/octomap_target"/>
     <param name="rate" value="10"/>
   </node>
-
   <node name="compare_octrees" pkg="world_model_consistency_check" type="compare_octrees" output="screen">
     <param name="topic_target" value="/octomap_target"/>
     <param name="depth" value="16"/>
     <param name="volume_threshold" value="0.0035"/>
+    <param name="permanent_markers" value="true"/>
     <remap from="/camera/depth_registered/points" to="/point_cloud_filter/points"/>
     <!--<remap from="/camera/depth_registered/points" to="/camera/depth_registered/points"/>-->
   </node>
+
+  <!--<node pkg="world_model_consistency_check" type="pcd2pointcloud" name="pcd2pointcloud_target" output="screen">-->
+    <!--<param name="~input" value="$(env HOME)/bagfiles/stamina/$(arg target)/accumulated.pcd"/>-->
+    <!--<param name="~output" value="/target/points"/>-->
+  <!--</node>-->
+
+  <!--<node pkg="world_model_consistency_check" type="pcd2pointcloud" name="pcd2pointcloud_model" output="screen">-->
+    <!--<param name="~input" value="$(env HOME)/bagfiles/stamina/$(arg model)/accumulated.pcd"/>-->
+    <!--<param name="~output" value="/model/points"/>-->
+  <!--</node>-->
+
+  <include file="$(find ur5_with_asus_calibration)/launch/publish_false_tf_map_to_world.launch">
+  </include>
+
+
   <!--<node name="rviz" pkg="rviz" type="rviz" args="-display-config $(find ur5_with_asus_bringup)/cfg/model_check.rviz" required="true"/>-->
   <!--<node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure">-->
   <!--</node>-->
